@@ -1,0 +1,39 @@
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+nav .navbar-brand .blue {
+    color: #537fbe;
+}
+
+nav .navbar-brand .red {
+    color: #ea433b;
+}
+.form {
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+#address{
+    width: 300px;
+    height: 100px;
+}
+textarea{
+    resize: both;
+    overflow: auto;
+}
+.card-text{
+    text-align: left;
+}
+
+.license{
+    text-align: justify;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}

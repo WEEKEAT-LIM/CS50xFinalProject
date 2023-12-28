@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Add Property
+{% endblock %}
+
+{% block main %}
+<form class="form" action="/add_property" method="post">
+    <div class="mb-3">
+        <label for="propertyName">Property Name</label>
+        <input type="text" class="form-control" id="propertyName" name="propertyName" placeholder="Enter Property name" autocomplete="off" autofocus>
+    </div>
+    <div class="mb-3">
+        <label for="address">Address</label>
+        <textarea type="text" class="form-control" id="address" name="address" placeholder="Enter Address"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="unitProvided">Unit Provided</label>
+        <input type="number" min="1" step="1" class="form-control" id="unitProvided" name="unitProvided" placeholder="Unit Provided">
+    </div>
+    <div class="mb-3">
+        <label for="pricePerMonth">Price / Month for 1 unit</label>
+        <input type="number" min="1" step="0.1" class="form-control" id="pricePerMonth" name="pricePerMonth" placeholder="Price Per Month for 1 unit">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Add Property</button>
+</form>
+{% endblock %}

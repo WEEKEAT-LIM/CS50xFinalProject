@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Add Property
+{% endblock %}
+
+{% block main %}
+<table class="table table-light">
+    <thead>
+        <tr>
+            <th class="text-start">Payer Name</th>
+            <th class="text-end">Property Name</th>
+            <th class="text-end">Months</th>
+            <th class="text-end">Unit</th>
+            <th class="text-end">Time</th>
+            <th class="text-end">Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for data in DataSet%}
+            <tr>
+                <td class="text-start">{{ data["payerName"] }}</td>
+                <td class="text-end">{{ data["propertyName"] }}</td>
+                <td class="text-end">{{ data["months"] }}</td>
+                <td class="text-end">{{ data["rentedUnit"] }}</td>
+                <td class="text-end">{{ data["time"] }}</td>
+                <td class="text-end">{{ data["type"] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

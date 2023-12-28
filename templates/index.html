@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block main %}
+<div>
+    <h2>Total Income => {{totalIncome}} </h2>
+</div>
+<div>
+    <div class="row">
+        {% for data in IDataSet %}
+        <div class="col-md-4 mb-4">
+            <div class="card bg-light text-dark rounded">
+                <div>
+                    <div>
+                    <h3>{{ data["propertyName"] }}</h3>
+                    <p class="card-text"><b>Unit Provided =></b> {{ data["unitProvided"] }}</p>
+                    <p class="card-text"><b>Price Per Month for 1 unit =></b> {{ data["pricePerMonth"] }}</p>
+                    <p class="card-text"><b>Available Units =></b> {{ data["availableUnits"] }}</p>
+                    </div>
+                    <br>
+                    <hr>
+                    <div>
+                        <b>Address:</b>
+                        <p class="card-text">{{ data["address"] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

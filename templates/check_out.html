@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Check Out
+{% endblock %}
+
+{% block main %}
+<form class="form" action="/CheckOut" method="post">
+    <div class="mb-3">
+        <label for="Property Name">Property Name</label>
+        <select class="form-control" name="propertyName">
+            <option disabled="" selected="">Property Name</option>
+            {% for data in dataSet%}
+                {% set PN = data['propertyName'] %}
+                <option value="{{PN}}">{{ PN }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="payerName">Payer Name</label>
+        <input type="text" class="form-control" id="payerName" name="payerName" placeholder="Enter Payer Name">
+    </div>
+    <div class="mb-3">
+        <label for="months">Months</label>
+        <input type="number" min="1" step="1" class="form-control" id="months" name="months"
+            placeholder="Number of months of payment">
+    </div>
+    <div class="mb-3">
+        <label for="rentedUnit">Units</label>
+        <input type="number" min="1" step="1" class="form-control" id="rentedUnit" name="rentedUnit"
+            placeholder="Number of units of payment">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Check Out</button>
+</form>
+{% endblock %}
